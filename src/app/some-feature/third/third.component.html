@@ -1,0 +1,18 @@
+<table
+  mat-table
+  matSort
+  (matSortChange)="sortData($event)"
+  class="mat-elevation-z8"
+>
+  <tbody>
+    <tr>
+      <th
+        mat-header-cell
+        mat-sort-header="field">Field</th>
+    </tr>
+
+    <tr *ngFor="let dataItem of sortedData">
+      <td mat-cell>{{dataItem.field}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,16 @@
+<div class="some-feature--container">
+  <ng-template #first>
+    <app-first (clicked)="onFirstComponentClicked()"></app-first>
+  </ng-template>
+
+  <ng-template #second>
+    <app-second (dataSubmitted)="onDataFromSecondComponentSubmitted($event)"></app-second>
+  </ng-template>
+
+  <ng-container [ngTemplateOutlet]="isFirstComponentClicked ? second : first"></ng-container>
+
+  <app-third
+    *ngIf="thirdComponentData"
+    [data]="thirdComponentData"
+  ></app-third>
+</div>
